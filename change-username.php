@@ -9,13 +9,13 @@ if(strlen($_SESSION['alogin'])=="")
     else{
 if(isset($_POST['submit']))
     {
-$password=md5($_POST['password']);
+$user=md5($_POST['user']);
 $newusername=md5($_POST['newusername']);
 $username=$_SESSION['alogin'];
     $sql ="SELECT UserName FROM admin WHERE UserName=:username and Password=:password";
 $query= $dbh -> prepare($sql);
-$query-> bindParam(':username', $username, PDO::PARAM_STR);
-$query-> bindParam(':password', $password, PDO::PARAM_STR);
+$query-> bindParam(':user', $user, PDO::PARAM_STR);
+$query-> bindParam(':newusername', $newusername, PDO::PARAM_STR);
 $query-> execute();
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() > 0)
