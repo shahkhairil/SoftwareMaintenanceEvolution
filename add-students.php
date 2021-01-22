@@ -121,14 +121,14 @@ else if($error){?>
 </div>
 
 <div class="form-group">
-<label for="default" class="col-sm-2 control-label">Rool Id</label>
+<label for="default" class="col-sm-2 control-label">Roll Id</label>
 <div class="col-sm-10">
 <input type="text" name="rollid" class="form-control" id="rollid" maxlength="5" required="required" autocomplete="off">
 </div>
 </div>
 
 <div class="form-group">
-<label for="default" class="col-sm-2 control-label">Email id)</label>
+<label for="default" class="col-sm-2 control-label">Email id</label>
 <div class="col-sm-10">
 <input type="email" name="emailid" class="form-control" id="email" required="required" autocomplete="off">
 </div>
