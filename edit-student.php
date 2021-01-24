@@ -15,17 +15,15 @@ if(isset($_POST['submit']))
 $studentname=$_POST['fullanme'];
 $roolid=$_POST['rollid']; 
 $studentemail=$_POST['emailid']; 
-$telNo=$_POST['telno']; 
 $gender=$_POST['gender']; 
 $classid=$_POST['class']; 
 $dob=$_POST['dob']; 
 $status=$_POST['status'];
-$sql="update tblstudents set StudentName=:studentname,RollId=:roolid,StudentEmail=:studentemail,TelephoneNo=:telNo,Gender=:gender,DOB=:dob,Status=:status where StudentId=:stid ";
+$sql="update tblstudents set StudentName=:studentname,RollId=:roolid,StudentEmail=:studentemail,Gender=:gender,DOB=:dob,Status=:status where StudentId=:stid ";
 $query = $dbh->prepare($sql);
 $query->bindParam(':studentname',$studentname,PDO::PARAM_STR);
 $query->bindParam(':roolid',$roolid,PDO::PARAM_STR);
 $query->bindParam(':studentemail',$studentemail,PDO::PARAM_STR);
-$query->bindParam(':telNo',$telNo,PDO::PARAM_STR);
 $query->bindParam(':gender',$gender,PDO::PARAM_STR);
 $query->bindParam(':dob',$dob,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
@@ -143,13 +141,6 @@ foreach($results as $result)
 <label for="default" class="col-sm-2 control-label">Email id)</label>
 <div class="col-sm-10">
 <input type="email" name="emailid" class="form-control" id="email" value="<?php echo htmlentities($result->StudentEmail)?>" required="required" autocomplete="off">
-</div>
-</div>
-
-<div class="form-group">
-<label for="default" class="col-sm-2 control-label">Telephone Number</label>
-<div class="col-sm-10">
-<input type="text" name="telno" class="form-control" id="telno" value="<?php echo htmlentities($result->TelephoneNo)?>" required="required" autocomplete="off">
 </div>
 </div>
 
