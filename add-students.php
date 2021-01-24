@@ -137,6 +137,13 @@ else if($error){?>
 </div>
 
 <div class="form-group">
+<label for="default" class="col-sm-2 control-label">Telephone Number</label>
+<div class="col-sm-10">
+<input type="text" name="telno" class="form-control" id="telno" required="required" autocomplete="off">
+</div>
+</div>
+
+<div class="form-group">
 <label for="default" class="col-sm-2 control-label">Gender</label>
 <div class="col-sm-10">
 <input type="radio" name="gender" value="Male" required="required" checked="">Male <input type="radio" name="gender" value="Female" required="required">Female <input type="radio" name="gender" value="Other" required="required">Other
