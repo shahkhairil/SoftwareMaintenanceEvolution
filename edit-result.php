@@ -171,6 +171,9 @@ foreach($results as $result)
                                                             <button type="submit" name="submit" class="btn btn-primary">Update</button>
                                                         </div>
 
+                                                        <div onclick="location.href='https://chatwith.io/s/5feb829997c1d'" 
+	                                                    align="center" class="whatsappbutton"><i class="fa fa-whatsapp fa-2x"></i><span>Contact Us</span></div>
+
                                                     </div>
                                                 </form>
 
