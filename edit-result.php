@@ -48,6 +48,14 @@ $msg="Result info updated successfully";
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
 
+        <style>
+            .whatsappbutton { background-color: #7ACC72; /* Green */ border: none; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 20px; padding: 10px 20px; margin-top: 18px !important; width: fit-content; margin: auto; cursor: pointer }
+
+            .whatsappbutton span { vertical-align: text-bottom !important; }
+
+            .fa-whatsapp { margin-right: 10px; }
+        </style>
+
     </head>
     <body class="top-navbar-fixed">
         <div class="main-wrapper">
