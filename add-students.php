@@ -134,12 +134,6 @@ else if($error){?>
 </div>
 </div>
 
-<<<<<<< Steve
-=======
-
->>>>>>> main
-
-
 <div class="form-group">
 <label for="default" class="col-sm-2 control-label">Gender</label>
 <div class="col-sm-10">
