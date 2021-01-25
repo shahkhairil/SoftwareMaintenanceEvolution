@@ -126,7 +126,7 @@ $cnt++;}
 <td><b><?php echo htmlentities($totlcount); ?></b> out of <b><?php echo htmlentities($outof=($cnt-1)*100); ?></b></td>
                                                         </tr>
                                                     <tr>
-                                                <th scope="row" colspan="2">Percntage</th>           
+                                                <th scope="row" colspan="2">Percentage</th>           
                                                             <td><b><?php echo  htmlentities($totlcount*(100)/$outof); ?> %</b></td>
                                                              </tr>
                                                 <tr class="hidden-print">
