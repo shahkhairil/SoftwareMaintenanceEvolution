@@ -73,7 +73,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
                                                         <div class="form-group">
                                                             <label for="inputEmail3" class="col-sm-6 control-label">Search your result</label>
                                                             <div class="col-sm-6">
-                                                               <a href="find-result.php">click here</a>
+                                                               <a class="btn btn-primary" href="find-result.php">Click here</a>
                                                             </div>
                                                         </div>
 
