@@ -41,6 +41,7 @@ td {
 </style>
 <?php $rollid=$_SESSION['rollid'];
 $classid=$_SESSION['classid'];
+$studentName="";
 $qery = "SELECT   tblstudents.StudentName,tblstudents.RollId,tblstudents.RegDate,tblstudents.StudentId,tblstudents.Status,tblclasses.ClassName,tblclasses.Section from tblstudents join tblclasses on tblclasses.id=tblstudents.ClassId where tblstudents.RollId=? and tblstudents.ClassId=?";
 $stmt21 = $mysqli->prepare($qery);
 $stmt21->bind_param("ss",$rollid,$classid);
@@ -48,7 +49,10 @@ $stmt21->execute();
                  $res1=$stmt21->get_result();
                  $cnt=1;
                    while($result=$res1->fetch_object())
-                  {  ?>
+                  {  
+                    
+                    $studentName=htmlentities($result->StudentName);
+                    ?>
 <p><b>Student Name :</b> <?php echo htmlentities($result->StudentName);?></p>
 <p><b>Student Roll Id :</b> <?php echo htmlentities($result->RollId);?>
 <p><b>Student Class:</b> <?php echo htmlentities($result->ClassName);?>(<?php echo htmlentities($result->Section);?>)
@@ -113,5 +117,5 @@ $dompdf->setPaper('A4', 'landscape');
 $dompdf->load_html($html);
 $dompdf->render();
 //dompdf->stream("",array("Attachment" => false));
-$dompdf->stream("result.pdf");
+$dompdf->stream("result ".$studentName." ".$rollid);
 ?>
