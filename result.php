@@ -125,13 +125,18 @@ $cnt++;}
                                                 <th scope="row" colspan="2">Total Marks</th>
 <td><b><?php echo htmlentities($totlcount); ?></b> out of <b><?php echo htmlentities($outof=($cnt-1)*100); ?></b></td>
                                                         </tr>
-<tr>
+                                                    <tr>
                                                 <th scope="row" colspan="2">Percntage</th>           
                                                             <td><b><?php echo  htmlentities($totlcount*(100)/$outof); ?> %</b></td>
                                                              </tr>
-<tr>
-                                                <th scope="row" colspan="2">Download Result</th>           
+                                                <tr class="hidden-print">
+                                                <th class="hidden-print"scope="row" colspan="2">Download Result</th>           
                                                             <td><b><a href="download-result.php">Download </a> </b></td>
+                                                             </tr>
+                                                <tr class="hidden-print">
+                                                <th class="hidden-print" scope="row" colspan="2">Print Result</th>           
+                                                            <td><b><a href="javascript:window.print()"> Print </a> 
+                                                            </b></td>
                                                              </tr>
 
  <?php } else { ?>     
