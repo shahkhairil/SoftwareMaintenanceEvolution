@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 error_reporting(0);
@@ -31,7 +30,7 @@ $query = $dbh->prepare($sql);
 $query->bindParam(':did',$did,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
-$msg="Subject Deactivate successfully";
+$msg="Subject Deactivate Successfully";
 }
 ?>
 <!DOCTYPE html>
@@ -40,7 +39,7 @@ $msg="Subject Deactivate successfully";
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Manage Subjects and CLass Combination</title>
+        <title>Admin Manage Subjects Combination</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" >
         <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
         <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
@@ -175,9 +174,9 @@ else
 <td>
 <?php if($stts=='0')
 { ?>
-<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to activate this subject?');"><i class="fa fa-check" title="Acticvate Record"></i> </a><?php } else {?>
+<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to activate this subject?');"><i class="fa fa-times" title="Acticvate Record"></i> </a><?php } else {?>
 
-<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to deactivate this subject?');"><i class="fa fa-times" title="Deactivate Record"></i> </a>
+<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to deactivate this subject?');"><i class="fa fa-check" title="Deactivate Record"></i> </a>
 <?php }?>
 </td>
 </tr>
@@ -246,4 +245,3 @@ else
     </body>
 </html>
 <?php } ?>
-
