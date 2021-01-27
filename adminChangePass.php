@@ -30,6 +30,7 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
         }
     }
     ?>
+
     <!DOCTYPE html>
     <html lang = "en">
     <head>
@@ -45,7 +46,6 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
     <link rel = "stylesheet" href = "css/main.css" media = "screen" >
     <script src = "js/modernizr/modernizr.min.js"></script>
     <script type = "text/javascript">
-
     function valid() {
         if ( document.chngpwd.newpassword.value != document.chngpwd.confirmpassword.value ) {
             alert( "New Password and Confirm Password Field do not match  !!" );
@@ -55,24 +55,7 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
         return true;
     }
     </script>
-    <style>
-    .errorWrap {
-        padding: 10px;
-        margin: 0 0 20px 0;
-        background: #fff;
-        border-left: 4px solid #dd3d36;
-        -webkit-box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
-        box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
-    }
-    .succWrap {
-        padding: 10px;
-        margin: 0 0 20px 0;
-        background: #fff;
-        border-left: 4px solid #5cb85c;
-        -webkit-box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
-        box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
-    }
-    </style>
+    
     </head>
     <body class = "top-navbar-fixed">
     <div class = "main-wrapper">
@@ -185,6 +168,27 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
             </div>
             <!-- /.main-wrapper -->
 
+            <!-- CSS STYLE -->
+            <style>
+            .errorWrap {
+                padding: 10px;
+                margin: 0 0 20px 0;
+                background: #fff;
+                border-left: 4px solid #dd3d36;
+                -webkit-box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
+                box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
+            }
+            .succWrap {
+                padding: 10px;
+                margin: 0 0 20px 0;
+                background: #fff;
+                border-left: 4px solid #5cb85c;
+                -webkit-box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
+                box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, .1 );
+            }
+            </style>
+            <!-- CSS STYLE -->
+            
             <!-- ===  ===  ===  = COMMON JS FILES ===  ===  ===  = -->
             <script src = "js/jquery/jquery-2.2.4.min.js"></script>
             <script src = "js/jquery-ui/jquery-ui.min.js"></script>
