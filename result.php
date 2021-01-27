@@ -88,6 +88,7 @@ foreach($resultss as $row)
                                                             <th>#</th>
                                                             <th>Subject</th>    
                                                             <th>Marks</th>
+                                                            <th>Grade</th>
                                                         </tr>
                                                </thead>
   
@@ -116,22 +117,52 @@ foreach($results as $result){
                                                 <th scope="row"><?php echo htmlentities($cnt);?></th>
                                                 			<td><?php echo htmlentities($result->SubjectName);?></td>
                                                 			<td><?php echo htmlentities($totalmarks=$result->marks);?></td>
+                                                            <td><?php $mark=$result->marks;
+                                                            
+                                                            if($mark>=90){
+                                                                echo "A (Excellent)";
+                                                            } else if($mark>=80){
+                                                                echo "A (Excellent)";
+                                                            } else if($mark>=70){
+                                                                echo "A- (Brilliant)";
+                                                            } else if($mark>=65){
+                                                                echo "B (Highest Honour)";
+                                                            } else if($mark>=60){
+                                                                echo "B (High Honour)";
+                                                            } else if($mark>=55){
+                                                                echo "C (Top Honour)";
+                                                            } else if($mark>=50){
+                                                                echo "C (Praiseworthy)";
+                                                            } else if($mark>=45){
+                                                                echo "D (Upon Graduation)";
+                                                            } else if($mark>=40){
+                                                                echo "E (Pass)";
+                                                            } else {
+                                                                echo "F (Fail)";
+                                                            }
+                                                            
+                                                            ?></td>
                                                 		</tr>
 <?php 
 $totlcount+=$totalmarks;
 $cnt++;}
 ?>
 <tr>
-                                                <th scope="row" colspan="2">Total Marks</th>
+                                                <th scope="row" colspan="3">Total Marks</th>
 <td><b><?php echo htmlentities($totlcount); ?></b> out of <b><?php echo htmlentities($outof=($cnt-1)*100); ?></b></td>
                                                         </tr>
-<tr>
-                                                <th scope="row" colspan="2">Percntage</th>           
+                                                    <tr>
+                                                <th scope="row" colspan="3">Percentage</th>           
                                                             <td><b><?php echo  htmlentities($totlcount*(100)/$outof); ?> %</b></td>
                                                              </tr>
-<tr>
-                                                <th scope="row" colspan="2">Download Result</th>           
+                                                <tr class="hidden-print">
+                                                <th class="hidden-print"scope="row" colspan="3">Download Result</th>           
                                                             <td><b><a href="download-result.php">Download </a> </b></td>
+                                                             </tr>
+                                                <tr class="hidden-print">
+                                                <th class="hidden-print" scope="row" colspan="3">Print Result</th>           
+                                                            <td><b><a href="javascript:window.print()"> Print </a> 
+                                                            </b></td>
                                                              </tr>
 
  <?php } else { ?>     
