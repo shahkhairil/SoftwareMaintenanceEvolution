@@ -21,7 +21,7 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Combination added successfully";
+$msg="Combined successfully";
 }
 else 
 {
@@ -64,7 +64,7 @@ $error="Something went wrong. Please try again";
                      <div class="container-fluid">
                             <div class="row page-title-div">
                                 <div class="col-md-6">
-                                    <h2 class="title">Add Subject Combination</h2>
+                                    <h2 class="title">Add Subject and Class Combination</h2>
                                 
                                 </div>
                                 
@@ -76,7 +76,7 @@ $error="Something went wrong. Please try again";
                                     <ul class="breadcrumb">
                                         <li><a href="dashboard.php"><i class="fa fa-home"></i> Home</a></li>
                                         <li> Subjects</li>
-                                        <li class="active">Add Subject Combination</li>
+                                        <li class="active">Add Subject and Class Combination</li>
                                     </ul>
                                 </div>
                              
@@ -90,7 +90,7 @@ $error="Something went wrong. Please try again";
                                         <div class="panel">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <h5>Add Subject Combination</h5>
+                                                    <h5>Add Subject and Class Combination</h5>
                                                 </div>
                                             </div>
                                             <div class="panel-body">
