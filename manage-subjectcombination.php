@@ -31,7 +31,7 @@ $query = $dbh->prepare($sql);
 $query->bindParam(':did',$did,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
-$msg="Subject Deactivate successfully";
+$msg="Subject Deactivated successfully";
 }
 ?>
 <!DOCTYPE html>
@@ -175,9 +175,9 @@ else
 <td>
 <?php if($stts=='0')
 { ?>
-<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('do you really want to ativate this subject');"><i class="fa fa-check" title="Acticvate Record"></i> </a><?php } else {?>
+<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to ativate this subject?');"><i class="fa fa-check" title="Acticvate Record"></i> </a><?php } else {?>
 
-<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('do you really want to deativate this subject');"><i class="fa fa-times" title="Deactivate Record"></i> </a>
+<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to deativate this subject?');"><i class="fa fa-times" title="Deactivate Record"></i> </a>
 <?php }?>
 </td>
 </tr>
