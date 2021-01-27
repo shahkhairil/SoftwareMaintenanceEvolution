@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 error_reporting(0);
@@ -175,9 +174,9 @@ else
 <td>
 <?php if($stts=='0')
 { ?>
-<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to activate this subject?');"><i class="fa fa-check" title="Acticvate Record"></i> </a><?php } else {?>
+<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to activate this subject?');"><i class="fa fa-times" title="Acticvate Record"></i> </a><?php } else {?>
 
-<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to deactivate this subject?');"><i class="fa fa-times" title="Deactivate Record"></i> </a>
+<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to deactivate this subject?');"><i class="fa fa-check" title="Deactivate Record"></i> </a>
 <?php }?>
 </td>
 </tr>
@@ -246,4 +245,3 @@ else
     </body>
 </html>
 <?php } ?>
-
