@@ -31,7 +31,7 @@ $query = $dbh->prepare($sql);
 $query->bindParam(':did',$did,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
-$msg="Subject Deactivate successfully";
+$msg="Subject Deactivate Successfully";
 }
 ?>
 <!DOCTYPE html>
