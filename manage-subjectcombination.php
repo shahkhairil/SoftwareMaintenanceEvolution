@@ -18,7 +18,7 @@ $query = $dbh->prepare($sql);
 $query->bindParam(':acid',$acid,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
-$msg="Subject Activate successfully";
+$msg="Subject Activated Successfully";
 }
 
  // for Deactivate Subject
@@ -45,7 +45,7 @@ $msg="Subject Deactivate successfully";
         <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
         <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
         <link rel="stylesheet" href="css/lobipanel/lobipanel.min.css" media="screen" >
-        <link rel="stylesheet" href="css/prism/prism.css" media="screen" > <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
+        <link rel="stylesheet" href="css/prism/prism.css" media="screen" > 
         <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
@@ -82,7 +82,7 @@ $msg="Subject Deactivate successfully";
                         <div class="container-fluid">
                             <div class="row page-title-div">
                                 <div class="col-md-6">
-                                    <h2 class="title">Manage Subjects Combination</h2>
+                                    <h2 class="title">Manage Subjects and Class Combination</h2>
                                 
                                 </div>
                                 
@@ -94,7 +94,7 @@ $msg="Subject Deactivate successfully";
                                     <ul class="breadcrumb">
             							<li><a href="dashboard.php"><i class="fa fa-home"></i> Home</a></li>
                                         <li> Subjects</li>
-            							<li class="active">Manage Subjects Combination</li>
+            							<li class="active">Manage Subjects and Class Combination</li>
             						</ul>
                                 </div>
                              
@@ -175,9 +175,9 @@ else
 <td>
 <?php if($stts=='0')
 { ?>
-<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('do you really want to ativate this subject');"><i class="fa fa-check" title="Acticvate Record"></i> </a><?php } else {?>
+<a href="manage-subjectcombination.php?acid=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to activate this subject?');"><i class="fa fa-check" title="Acticvate Record"></i> </a><?php } else {?>
 
-<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('do you really want to deativate this subject');"><i class="fa fa-times" title="Deactivate Record"></i> </a>
+<a href="manage-subjectcombination.php?did=<?php echo htmlentities($result->scid);?>" onclick="confirm('Do you really want to deactivate this subject?');"><i class="fa fa-times" title="Deactivate Record"></i> </a>
 <?php }?>
 </td>
 </tr>
