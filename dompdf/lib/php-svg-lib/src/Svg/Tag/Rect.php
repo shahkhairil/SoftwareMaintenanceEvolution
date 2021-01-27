@@ -3,7 +3,7 @@
  * @package php-svg-lib
  * @link    http://github.com/PhenX/php-svg-lib
  * @author  Fabien Ménager <fabien.menager@gmail.com>
- * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
+ * @license GNU LGPLv3+ http://www.gnu.org/copyleft/lesser.html
  */
 
 namespace Svg\Tag;
@@ -17,27 +17,37 @@ class Rect extends Shape
     protected $rx = 0;
     protected $ry = 0;
 
-    public function start($attribs)
+    public function start($attributes)
     {
-        if (isset($attribs['x'])) {
-            $this->x = $attribs['x'];
+        if (isset($attributes['x'])) {
+            $this->x = $attributes['x'];
         }
-        if (isset($attribs['y'])) {
-            $this->y = $attribs['y'];
-        }
-
-        if (isset($attribs['width'])) {
-            $this->width = $attribs['width'];
-        }
-        if (isset($attribs['height'])) {
-            $this->height = $attribs['height'];
+        if (isset($attributes['y'])) {
+            $this->y = $attributes['y'];
         }
 
-        if (isset($attribs['rx'])) {
-            $this->rx = $attribs['rx'];
+        if (isset($attributes['width'])) {
+            if ('%' === substr($attributes['width'], -1)) {
+                $factor = substr($attributes['width'], 0, -1) / 100;
+                $this->width = $this->document->getWidth() * $factor;
+            } else {
+                $this->width = $attributes['width'];
+            }
         }
-        if (isset($attribs['ry'])) {
-            $this->ry = $attribs['ry'];
+        if (isset($attributes['height'])) {
+            if ('%' === substr($attributes['height'], -1)) {
+                $factor = substr($attributes['height'], 0, -1) / 100;
+                $this->height = $this->document->getHeight() * $factor;
+            } else {
+                $this->height = $attributes['height'];
+            }
+        }
+
+        if (isset($attributes['rx'])) {
+            $this->rx = $attributes['rx'];
+        }
+        if (isset($attributes['ry'])) {
+            $this->ry = $attributes['ry'];
         }
 
         $this->document->getSurface()->rect($this->x, $this->y, $this->width, $this->height, $this->rx, $this->ry);
