@@ -117,7 +117,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 
                                                     <form class="form-horizontal" method="post">
                                                     	<div class="form-group">
-                                                    		<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                                    		<label for="inputEmail3" class="col-sm-2 control-label">Username</label>
                                                     		<div class="col-sm-10">
                                                     			<input type="text" name="username" class="form-control" id="inputEmail3" placeholder="UserName">
                                                     		</div>
