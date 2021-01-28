@@ -111,14 +111,6 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
             <form class = "form-horizontal" method = "post">
 
             <div class = "form-group">
-            <label for = "default" class = "col-sm-2 control-label">Id</label>
-            <div class = "col-sm-10">
-            <input type = "text" name = "id" class = "form-control" id = "id" maxlength = "2" required = "required" autocomplete = "off">
-            <span class = "help-block">Please input unused ID from database only</span>
-            </div>
-            </div>
-
-            <div class = "form-group">
             <label for = "default" class = "col-sm-2 control-label">Username</label>
             <div class = "col-sm-10">
             <input type = "text" name = "username" class = "form-control" id = "username" required = "required" autocomplete = "off">
