@@ -53,6 +53,7 @@
                                            
                                         </ul>
                                         <li><a href="change-password.php"><i class="fa fa fa-server"></i> <span> Admin Change Password</span></a></li>
+                                        <li><a href="add-admin.php"><i class="fa fa fa-server"></i> <span> Add Admin </span></a></li>
                                            
                                     </li>
                             </div>
