@@ -8,29 +8,12 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
 
 } else {
     if ( isset( $_POST['submit'] ) ) {
+        
         $id = $_POST['id'];
-
         $username = $_POST['username'];
         $pwd = md5( $_POST['pwd'] );
 
-        //$studentname = $_POST['fullanme'];
-        //$roolid = $_POST['rollid'];
-
-        //$studentemail = $_POST['emailid'];
-        //$telNo = $_POST['telno'];
-        //$gender = $_POST['gender'];
-
-        //$classid = $_POST['class'];
-
-        //$dob = $_POST['dob'];
-
-        //$status = 1;
-
-        //$sql = "INSERT INTO  tblstudents(StudentName,RollId,StudentEmail,TelephoneNo,Gender,ClassId,DOB,Status) VALUES(:studentname,:roolid,:studentemail,:telNo,:gender,:classid,:dob,:status)";
-        //$sqlcopy = "INSERT INTO  tblstudents(StudentName,RollId,StudentEmail,TelephoneNo,Gender,ClassId,DOB,Status) VALUES(:studentname,:roolid,:studentemail,:telNo,:gender,:classid,:dob,:status)";
-        //$sql2 = "INSERT INTO `admin` (`id`, `UserName`, `Password`) VALUES ('3', 'khairuladmin2', 'khai');";
-
-        $sql = "INSERT INTO `admin` (`id`, `UserName`, `Password`) VALUES (:id, :username, :pwd);";
+        $sql = "INSERT INTO admin (id, UserName, Password) VALUES (:id, :username, :pwd);";
         $query = $dbh->prepare( $sql );
         $query->bindParam( ':id', $id, PDO::PARAM_STR );
         $query-> bindParam( ':username', $username, PDO::PARAM_STR );
@@ -130,16 +113,33 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
             <div class = "form-group">
             <label for = "default" class = "col-sm-2 control-label">Id</label>
             <div class = "col-sm-10">
-            <input type = "text" name = "rollid" class = "form-control" id = "rollid" maxlength = "5" required = "required" autocomplete = "off">
+            <input type = "text" name = "id" class = "form-control" id = "id" maxlength = "2" required = "required" autocomplete = "off">
+            <span class = "help-block">Please input unused ID from database only</span>
             </div>
             </div>
 
             <div class = "form-group">
             <label for = "default" class = "col-sm-2 control-label">Username</label>
             <div class = "col-sm-10">
-            <input type = "text" name = "fullanme" class = "form-control" id = "fullanme" required = "required" autocomplete = "off">
+            <input type = "text" name = "username" class = "form-control" id = "username" required = "required" autocomplete = "off">
             </div>
             </div>
+
+            <div class = "form-group">
+            <label for = "default" class = "col-sm-2 control-label">Password</label>
+            <div class = "col-sm-10">
+            <input type = "password" name = "pwd" class = "form-control" required = "required" id = "success">
+            </div>
+            </div>
+
+            <!--
+            <div class = "form-group has-success">
+            <label for = "success" class = "control-label">Password</label>
+            <div class = "">
+            <input type = "password" name = "password" class = "form-control" required = "required" id = "success">
+            </div>
+            </div>
+             -->
 
             <div class = "form-group">
             <div class = "col-sm-offset-2 col-sm-10">
