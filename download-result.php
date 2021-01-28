@@ -5,6 +5,7 @@ session_start();
 ob_start();
 require_once('includes/configpdo.php');
 error_reporting(0);
+
 ?>
 
 <html>
@@ -42,7 +43,7 @@ td {
 <?php $rollid=$_SESSION['rollid'];
 $classid=$_SESSION['classid'];
 $studentName="";
-$qery = "SELECT   tblstudents.StudentName,tblstudents.RollId,tblstudents.RegDate,tblstudents.StudentId,tblstudents.Status,tblclasses.ClassName,tblclasses.Section from tblstudents join tblclasses on tblclasses.id=tblstudents.ClassId where tblstudents.RollId=? and tblstudents.ClassId=?";
+$qery = "SELECT   ExamName,tblstudents.StudentName,tblstudents.RollId,tblstudents.RegDate,tblstudents.StudentId,tblstudents.Status,tblclasses.ClassName,tblclasses.Section from tblstudents join tblclasses on tblclasses.id=tblstudents.ClassId join tblresult on tblresult.StudentId=tblstudents.StudentId join tblexam on tblresult.ExamId=tblexam.ExamId where tblstudents.RollId=? and tblstudents.ClassId=? limit 1";
 $stmt21 = $mysqli->prepare($qery);
 $stmt21->bind_param("ss",$rollid,$classid);
 $stmt21->execute();
@@ -55,6 +56,7 @@ $stmt21->execute();
                     ?>
 <p><b>Student Name :</b> <?php echo htmlentities($result->StudentName);?></p>
 <p><b>Student Roll Id :</b> <?php echo htmlentities($result->RollId);?>
+<p><b>Exam Name :</b> <?php echo htmlentities($result->ExamName);?>
 <p><b>Student Class:</b> <?php echo htmlentities($result->ClassName);?>(<?php echo htmlentities($result->Section);?>)
 <?php }
 
