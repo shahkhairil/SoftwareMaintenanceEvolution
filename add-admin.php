@@ -22,7 +22,7 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
         if ( $lastInsertId ) {
-            $msg = "Admin info added successfully";
+            $msg = "New admin added successfully";
         } else {
             $error = "Something went wrong. Please try again";
         }
@@ -98,7 +98,7 @@ if ( strlen( $_SESSION['alogin'] ) == "" ) {
     <?php if ( $msg ) {
         ?>
         <div class = "alert alert-success left-icon-alert" role = "alert">
-        <strong>Well done!</strong><?php echo htmlentities( $msg );
+        <strong>Well done! </strong><?php echo htmlentities( $msg );
         ?>
         </div><?php } else if ( $error ) {
             ?>
